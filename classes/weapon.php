@@ -69,8 +69,8 @@ class weapon
         $sword = new \classes\weapon(1, 'nez de gobelin', 1, 2);
         $dagger = new \classes\weapon(2, 'épée courte',
             1, 6);
-        $staff = new \classes\weapon(3, 'bâton de Nécroman', 2, 6);
-        $axe = new \classes\weapon(4, 'testicule de dragon', 1, 10);
+        $staff = new \classes\weapon(3, 'bâton de Nécroman', 1, 4);
+        $axe = new \classes\weapon(4, 'testicule de dragon', 10, 20);
         return [$sword, $dagger, $staff, $axe];
     }
     public function getDamageWeapon() : int
