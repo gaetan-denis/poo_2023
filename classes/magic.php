@@ -17,6 +17,22 @@ class magic
      * @param string $element
      * @param int $dommages
      */
+    public function __construct(int $id, string $name, int $range, string $element, int $dommages)
+    {
+        $this->id = $id;
+        $this->name = $name;
+        $this->range = $range;
+        $this->element = $element;
+        $this->dommages = $dommages;
+    }
+
+    /**
+     * @param int $id
+     * @param string $name
+     * @param int $range
+     * @param string $element
+     * @param int $dommages
+     */
 
     public function getId(): int
     {
@@ -62,17 +78,21 @@ class magic
     {
         return $this->dommages;
     }
+
     public function setDommages(int $dommages): void
     {
         $this->dommages = $dommages;
     }
 
-    public static function generateWeapons(): array
+
+    public static function generateMagic(): array
     {
-        $sword = new \classes\weapon(1, 'nez de gobelin', 1, 2);
-        $dagger = new \classes\weapon(2, 'épée courte',
-            1, 6);
-        $staff = new \classes\weapon(3, 'bâton de Nécroman', 2, 6);
-        $axe = new \classes\weapon(4, 'testicule de dragon', 1, 10);
-        return [$sword, $dagger, $staff, $axe];
+        $spell1 = new \classes\magic(1, 'Flamèche', 2, 'Feu', 3);
+        $spell2 = new \classes\magic(1, 'Boule de neige', 4, 'Glace', 3);
+        $spell3 = new \classes\magic(1, 'Bourasque', 6, 'Vent', 5);
+        $spell4 = new \classes\magic(1, 'Tremblote de Richter', 2, 'Terre', 9);
+        $spell5 = new \classes\magic(1, 'Souricière du mage Schrödinger', 2, 'Quantique', 9);
+
+        return [$spell1, $spell2, $spell3, $spell4, $spell5];
+    }
 }

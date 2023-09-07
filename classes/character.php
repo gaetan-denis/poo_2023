@@ -32,6 +32,8 @@ class character
     private int $defense;
     private object $weapon;
 
+    private object $magic;
+
     /**
      * @param string $name
      * @param int $id
@@ -82,7 +84,10 @@ class character
         return $this->weapon;
     }
 
-
+    public function getMagic():object
+    {
+        return $this->magic;
+    }
     /**
      * SETTERS
      */
@@ -129,7 +134,10 @@ class character
     {
         $this->weapon = $weapons[rand(0, count($weapons) -1)];
     }
-
+    public function giveMagic(array $magic)
+    {
+        $this->magic= $magic[rand(0,count($magic)-1)];
+    }
     /**
      * @param object $target
      * @return string

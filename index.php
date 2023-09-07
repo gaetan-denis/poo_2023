@@ -35,23 +35,27 @@ spl_autoload_register(function ($class) {
 // les armes à distance permettent l'esquive, mais pas la parade.
 
 $weapons = \classes\weapon::generateWeapons();
-
+$magic = \classes\magic::generateMagic();
 // instanciation des objets nécessaires à l'exécution du programme
 $pc = new \classes\pc('PC', 1, 'Marc');
 $pc->setHp(20);
 $pc->setAttack(10);
 $pc->setDefense(10);
 $pc->giveWeapon($weapons);
+$pc->giveMagic($magic);
 
 $npc = new \classes\npc('NPC', 2);
 $npc->setHp(20);
 $npc->setAttack(10);
 $npc->setDefense(10);
 $npc->giveWeapon($weapons);
+$npc->giveMagic($magic);
 
 // attaque simple
 //echo $pc->Attack($npc);
 
+var_dump($npc);
+var_dump($pc);
 // attaque & riposte jusqu'à la mort d'un des candidats
 while($pc->getHp() > 0 && $npc->getHp() > 0) {
     echo $pc->Attack($npc);
