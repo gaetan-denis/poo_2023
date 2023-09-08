@@ -79,12 +79,12 @@ class weapon
 
     public static function generateWeapons(): array
     {
-        $weapon1 = new \classes\weapon(1, 'nez de gobelin', 1, 2);
-        $weapon2 = new \classes\weapon(2, 'épée courte',
-            1, 6);
-        $weapon3 = new \classes\weapon(3, 'bâton de Nécroman', 1, 4);
-        $weapon4 = new \classes\weapon(4, 'épée à deux mains ', 1, 10);
-        return [$weapon1, $weapon2, $weapon3, $weapon4];
+        $weapon1 = new \classes\weapon(1, 'nez de gobelin', 1, 2,1);
+        $weapon2 = new \classes\weapon(2, 'épée courte',1, 6,1);
+        $weapon3 = new \classes\weapon(3, 'bâton de Nécroman', 1, 4,1);
+        $weapon4 = new \classes\weapon(4, 'épée à deux mains ', 1, 10,1);
+        $weapon5 = new \classes\weapon(5,'arc court', 1,6,0);
+        return [$weapon1, $weapon2, $weapon3, $weapon4,$weapon5];
     }
     public function getDamageWeapon() : int
     {
