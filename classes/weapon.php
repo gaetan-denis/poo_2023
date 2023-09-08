@@ -9,18 +9,31 @@ class weapon
     public int $minDamage = 1;
     public int $maxDamage;
 
+    public bool $isCac;
+
+    public function isCac(): bool
+    {
+        return $this->isCac;
+    }
+
+    public function setIsCac(bool $isCac): void
+    {
+        $this->isCac = $isCac;
+    }
+
     /**
      * @param int $id
      * @param string $name
      * @param int $minDamage
      * @param int $maxDamage
      */
-    public function __construct(int $id, string $name, int $minDamage, int $maxDamage)
+    public function __construct(int $id, string $name, int $minDamage, int $maxDamage, bool $isCac)
     {
         $this->id = $id;
         $this->name = $name;
         $this->minDamage = $minDamage;
         $this->maxDamage = $maxDamage;
+        $this->isCac= $isCac;
     }
 
 
@@ -66,12 +79,12 @@ class weapon
 
     public static function generateWeapons(): array
     {
-        $sword = new \classes\weapon(1, 'nez de gobelin', 1, 2);
-        $dagger = new \classes\weapon(2, 'épée courte',
+        $weapon1 = new \classes\weapon(1, 'nez de gobelin', 1, 2);
+        $weapon2 = new \classes\weapon(2, 'épée courte',
             1, 6);
-        $staff = new \classes\weapon(3, 'bâton de Nécroman', 1, 4);
-        $axe = new \classes\weapon(4, 'testicule de dragon', 10, 20);
-        return [$sword, $dagger, $staff, $axe];
+        $weapon3 = new \classes\weapon(3, 'bâton de Nécroman', 1, 4);
+        $weapon4 = new \classes\weapon(4, 'épée à deux mains ', 1, 10);
+        return [$weapon1, $weapon2, $weapon3, $weapon4];
     }
     public function getDamageWeapon() : int
     {
