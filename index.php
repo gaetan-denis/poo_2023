@@ -37,7 +37,7 @@ spl_autoload_register(function ($class) {
 $weapons = \classes\weapon::generateWeapons();
 $magic = \classes\magic::generateMagic();
 // instanciation des objets nécessaires à l'exécution du programme
-$pc = new \classes\pc('PC', 1, 'Marc');
+$pc = new \classes\pc('PC', 1, 'Soldat du Grondor');
 $pc->setHp(20);
 $pc->setAttack(10);
 $pc->setDefense(10);

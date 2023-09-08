@@ -2,7 +2,7 @@
 
 namespace classes;
 
-class magic
+class magic extends attackType
 {
     private int $id;
     private string $name;

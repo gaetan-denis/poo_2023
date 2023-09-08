@@ -2,7 +2,7 @@
 
 namespace classes;
 
-class weapon
+class weapon extends attackType
 {
     public int $id;
     public string $name;
